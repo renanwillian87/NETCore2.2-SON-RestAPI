@@ -11,3 +11,6 @@
 ## Swagger
  - Setup
  - Route Template
+
+## Entity Framework Core
+ - Migration
