@@ -14,3 +14,6 @@
 
 ## Entity Framework Core
  - Migration
+
+## HATEOAS
+ - Implemented HATEOAS
