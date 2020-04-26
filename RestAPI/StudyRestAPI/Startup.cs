@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using StudyRestAPI.Data;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace StudyRestAPI
 {
@@ -27,9 +28,14 @@ namespace StudyRestAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(config => 
-            config.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                config.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("v1", new Info { Title = "API de Produtos", Version = "v1" } );
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -46,6 +52,15 @@ namespace StudyRestAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseSwagger(config => 
+            {
+                config.RouteTemplate = "openapi/{documentName}/swagger.json";
+            });
+            app.UseSwaggerUI(config => 
+            {
+                config.SwaggerEndpoint("/openapi/v1/swagger.json", "v1 docs");
+            });
         }
     }
 }

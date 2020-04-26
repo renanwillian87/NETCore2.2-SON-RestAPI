@@ -7,7 +7,6 @@ D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\bin
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\bin\Debug\netcoreapp2.2\StudyRestAPI.dll
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\bin\Debug\netcoreapp2.2\StudyRestAPI.pdb
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.csprojAssemblyReference.cache
-D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.csproj.CoreCompileInputs.cache
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.RazorAssemblyInfo.cache
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.RazorAssemblyInfo.cs
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.AssemblyInfoInputs.cache
@@ -16,3 +15,4 @@ D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.dll
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.pdb
 D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.genruntimeconfig.cache
+D:\Projects\_Estudos\SchoolOfNet\NETCore2.2-SON-RestAPI\RestAPI\StudyRestAPI\obj\Debug\netcoreapp2.2\StudyRestAPI.csproj.CoreCompileInputs.cache
