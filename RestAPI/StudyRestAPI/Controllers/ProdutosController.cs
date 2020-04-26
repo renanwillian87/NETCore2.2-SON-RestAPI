@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudyRestAPI.Data;
+using StudyRestAPI.Hateoas;
 using StudyRestAPI.Models;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,35 @@ namespace StudyRestAPI.Controllers
     public class ProdutosController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private Hateoas.Hateoas _hateoas;
 
         public ProdutosController(ApplicationDbContext context)
         {
             _context = context;
+            _hateoas = new Hateoas.Hateoas("localhost:5001/api/v1/Produtos");
+            _hateoas.AddAction("GET_INFO", "GET");
+            _hateoas.AddAction("DELETE_PRODUCT", "DELETE");
+            _hateoas.AddAction("EDIT_PRODUCT", "PATCH");
         }
 
         [HttpGet]
         public IActionResult Get()
         {
             var produtos = _context.Produtos.ToList();
-            return Ok(produtos);
+
+            var produtosContainer = new List<ProdutoContainer>();
+
+            foreach (var produto in produtos)
+            {
+                var produtoHateoas = new ProdutoContainer
+                {
+                    Produto = produto,
+                    Links = _hateoas.GetActions(produto.Id.ToString())
+                };
+                produtosContainer.Add(produtoHateoas);
+            }
+
+            return Ok(produtosContainer);
         }
 
         [HttpGet("{id}")]
@@ -31,7 +50,14 @@ namespace StudyRestAPI.Controllers
         {
             var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
             if(produto != null)
-                return Ok(produto);
+            {
+                var produtoHateoas = new ProdutoContainer
+                {
+                    Produto = produto,
+                    Links = _hateoas.GetActions(produto.Id.ToString())
+                };
+                return Ok(produtoHateoas);
+            }
 
             return NotFound("");
         }
@@ -91,6 +117,12 @@ namespace StudyRestAPI.Controllers
         {
             public string Nome { get; set; }
             public float Preco { get; set; }
+        }
+
+        public class ProdutoContainer
+        {
+            public Produto Produto { get; set; }
+            public Link[] Links { get; set; }
         }
     }
 }
